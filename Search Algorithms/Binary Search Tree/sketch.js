@@ -7,7 +7,7 @@ function setup() {
   textFont(font);
 
   // Creating a canvas
-  createCanvas(960, 480);
+  createCanvas(960, 560);
   background(50);
 
   // Making tree object and adding values to the tree
@@ -24,13 +24,13 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   fill(35);
-  rect(width / 2 - 3, 420 + 3, 363, 43);
+  rect(width / 2 - 3, 503, 443, 43);
   fill(colour);
-  rect(width / 2, 420, 360, 40);
+  rect(width / 2, 500, 440, 40);
   textAlign(CENTER);
   fill(50);
   textSize(24);
-  text("RELOAD", width / 2, 428);
+  text("RELOAD", width / 2, 508);
 }
 
 // Checks if the mouse is clicked and then calls clicked() function
@@ -40,7 +40,7 @@ function mouseClicked() {
 
 // Checks if the mouse is between the reload button
 function clicked() {
-  if (mouseX < 654 && mouseX > 292 && mouseY < 440 && mouseY > 400) {
+  if (mouseX < 734 && mouseX > 372 && mouseY < 520 && mouseY > 480) {
     colour = 180;
     setTimeout(location.reload(), 500);
   }
