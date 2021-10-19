@@ -1,4 +1,11 @@
+// Global Variables
+let colour = 220;
+let font;
+
 function setup() {
+  font = 'Source Code Pro';
+  textFont(font);
+
   // Creating a canvas
   createCanvas(960, 480);
   background(50);
@@ -18,7 +25,7 @@ function draw() {
   rectMode(CENTER);
   fill(35);
   rect(width / 2 - 3, 420 + 3, 363, 43);
-  fill(220);
+  fill(colour);
   rect(width / 2, 420, 360, 40);
   textAlign(CENTER);
   fill(50);
@@ -34,20 +41,7 @@ function mouseClicked() {
 // Checks if the mouse is between the reload button
 function clicked() {
   if (mouseX < 654 && mouseX > 292 && mouseY < 440 && mouseY > 400) {
-    reloadAnimation();
-    location.reload();
+    colour = 180;
+    setTimeout(location.reload(), 500);
   }
-}
-
-// Changes the reload button's fill to darker colour to show interaction
-function reloadAnimation() {
-  rectMode(CENTER);
-  fill(35);
-  rect(width / 2 - 3, 420 + 3, 363, 43);
-  fill(200);
-  rect(width / 2, 420, 360, 40);
-  textAlign(CENTER);
-  fill(50);
-  textSize(24);
-  text("RELOAD", width / 2, 428);
 }
