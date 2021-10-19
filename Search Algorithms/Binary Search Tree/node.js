@@ -40,6 +40,15 @@ class Node {
     console.log(this.value);
 
     // Display
+    this.display(parent);
+
+    if (this.right != null) {
+      this.right.visit(this);
+    }
+  }
+
+  // Displaying the visualization of the tree
+  display(parent){
     strokeWeight(1);
     stroke(220, 100);
     line(parent.x, parent.y, this.x, this.y);
@@ -51,9 +60,5 @@ class Node {
     textAlign(CENTER);
     textSize(24);
     text(this.value, this.x, this.y + 8);
-
-    if (this.right != null) {
-      this.right.visit(this);
-    }
   }
 }
